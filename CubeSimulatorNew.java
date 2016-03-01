@@ -1,4 +1,5 @@
 // TODO: Convert to JFrame and out of hsa.Console
+// TODO: Split into multiple files
 
 // The "CubeSimulatorNew" class.
 import java.awt.*;
@@ -426,9 +427,17 @@ public class CubeSimulatorNew
 
 
 		// Input validation
+		
+		isCorrect = true;
 
-		for (i = 0 ; i < acceptable.length && !isCorrect ; i++)
-		    isCorrect = acceptable [i] == lastInputs [i];
+		for (i = 0 ; i < acceptable.length; i++)
+		{
+		    if (acceptable [i] != lastInputs [i])
+		    {
+			isCorrect = false;
+			break;
+		    }
+		}
 
 		if (isCorrect)
 		{
